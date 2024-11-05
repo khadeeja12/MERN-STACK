@@ -12,7 +12,8 @@ The Values inside the state ie, previous values are immutable<br>
 Nosql- unstructured <br>
 Here Collections are there - no rows and columns<br>
 No datatype, not important to presnt all values<br>
-<p>
+
+<h3>Commands</h3><br>
 show dbs - to know the the databases<br>
 use mydb - we switched to our new database. if exist, it switch and if not exist create and switch to it<br>
 db.createCollection("mycollect") - creating new Collection
@@ -41,9 +42,11 @@ db.mycollect.updateMany({profession:{$exists:true}},{$unset:{profession:""}}) - 
 db.mycollect.updateOne({name:"Nivya"},{$rename:{name:"fullname"}}) - rename the column name of a person <br>
 db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:"sleep"}}) - add one column hobbies<br>
 db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:{$each:["cooking","talking"]}}}) - add more than one values into a column <br>
+db.mycollect.updateOne({name:"khadeeja"},{$pull:{hobbies:"talking"}}) - remove one value from a column <br>
 
 
-</p>
+
+
  
 
  
