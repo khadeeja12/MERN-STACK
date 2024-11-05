@@ -12,7 +12,7 @@ The Values inside the state ie, previous values are immutable<br>
 Nosql- unstructured <br>
 Here Collections are there - no rows and columns<br>
 No datatype, not important to presnt all values<br>
-
+<p>
 show dbs - to know the the databases<br>
 use mydb - we switched to our new database. if exist, it switch and if not exist create and switch to it<br>
 db.createCollection("mycollect") - creating new Collection
@@ -43,7 +43,7 @@ db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:"sleep"}}) - add one co
 db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:{$each:["cooking","talking"]}}}) - add more than one values into a column <br>
 
 
-
+</p>
  
 
  
