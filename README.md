@@ -16,11 +16,13 @@ No datatype, not important to presnt all values<br>
 show dbs - to know the the databases<br>
 use mydb - we switched to our new database. if exist, it switch and if not exist create and switch to it<br>
 db.createCollection("mycollect") - creating new Collection
-Inserting Values into Collection:<br><br>
+Inserting Values into Collection:<br>
 db.mycollect.insertOne({name:"khadeeja",age:22,profession:"student"}) - For insert one value<br>
 For each item inserted we get unique id<br>
 mydb> db.mycollect.insertMany([{name:"Nintu",age:21},{name:"Nivya",profession:"CloudEngineer"},{name:"Sahala",age:23,profession:"Associate"}]) - For many Values <br>
 db.mycollect.find() - For seeing the all data in Collection<br>
+db.mycollect.find({name:"khadeeja"}) - find by name <br>
+db.mycollect.find({_id: ObjectId('6729b18d28959604520d8190')}) - find by id <br>
  
 
  
