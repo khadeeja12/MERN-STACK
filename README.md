@@ -27,6 +27,9 @@ db.mycollect.find({$and : [{name:"khadeeja"},{age:22}]}) - find using And (2 val
 db.mycollect.find({$or : [{name:"khadeeja"},{profession:"student"}]}) - find using or <br>
 db.mycollect.find({$and:[{age:{$lt:30}},{age:{$gt:20}}]}) - greaterthan and lessthan <br>
 db.mycollect.find({profession:{$ne:"student"}}) - not the profession <br>
+mydb> db.mycollect.find().sort({ age: -1, name: -1 }) - sort in descending order<br>
+db.mycollect.find().skip(1).limit(3) - skip values and show rest<br>
+
 
  
  
