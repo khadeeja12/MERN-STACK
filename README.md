@@ -24,7 +24,10 @@ db.mycollect.find() - For seeing the all data in Collection<br>
 db.mycollect.find({name:"khadeeja"}) - find by name <br>
 db.mycollect.find({_id: ObjectId('6729b18d28959604520d8190')}) - find by id <br>
 db.mycollect.find({$and : [{name:"khadeeja"},{age:22}]}) - find using And (2 values)<br>
- db.mycollect.find({$or : [{name:"khadeeja"},{profession:"student"}]}) - find using or <br>
+db.mycollect.find({$or : [{name:"khadeeja"},{profession:"student"}]}) - find using or <br>
+db.mycollect.find({$and:[{age:{$lt:30}},{age:{$gt:20}}]}) - greaterthan and lessthan <br>
+db.mycollect.find({profession:{$ne:"student"}}) - not the profession <br>
+
  
  
 
