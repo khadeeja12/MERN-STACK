@@ -44,6 +44,12 @@ db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:"sleep"}}) - add one co
 db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:{$each:["cooking","talking"]}}}) - add more than one values into a column <br>
 db.mycollect.updateOne({name:"khadeeja"},{$pull:{hobbies:"talking"}}) - remove one value from a column <br>
 
+<h1>Node</h1><br>
+node -v<br>
+npm -v <br>
+
+
+
 
 
 
