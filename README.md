@@ -29,7 +29,22 @@ db.mycollect.find({$and:[{age:{$lt:30}},{age:{$gt:20}}]}) - greaterthan and less
 db.mycollect.find({profession:{$ne:"student"}}) - not the profession <br>
 mydb> db.mycollect.find().sort({ age: -1, name: -1 }) - sort in descending order<br>
 db.mycollect.find().skip(1).limit(3) - skip values and show rest<br>
+db.mycollect.find({name:/^KH/i}) - to display the person start with kh<br>
+db.mycollect.find({name:/^KH/i},{name:1,age:1}) - display name and age <br>
+db.mycollect.find({name:/^KH/i},{name:1,profession:1,_id:0}) - not id
+db.mycollect.find({ age: { $exists: true } }, { name: 1, profession: 1, age: 1, _id: 1 })  or db.mycollect.find({ age: { $exists: true } })- persons with age <br>
+db.mycollect.updateOne({name:"Nintu"},{$set:{age:22}}) - Update the value of age of a person <br>
+db.mycollect.updateOne({name:"Nivya"},{$inc:{age:3}}) - Increment age by 3 <br>
+db.mycollect.updateOne({name:"Nintu"},{$unset:{age:""}}) - Remove the field age <br>
+db.mycollect.updateOne({name:"Nintu"},{$unset:{profession:""}}) - remove the profession
+db.mycollect.updateMany({profession:{$exists:true}},{$unset:{profession:""}}) - if profession exists for all, then remove <br>
+db.mycollect.updateOne({name:"Nivya"},{$rename:{name:"fullname"}}) - rename the column name of a person <br>
+db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:"sleep"}}) - add one column hobbies<br>
+db.mycollect.updateOne({name:"khadeeja"},{$push:{hobbies:{$each:["cooking","talking"]}}}) - add more than one values into a column <br>
 
+
+
+ 
 
  
  
