@@ -14,25 +14,63 @@
 
 
 
-const EventEmitter=require("events");
-const server=new EventEmitter();
+// const EventEmitter=require("events");
+// const server=new EventEmitter();
 
 //set up a listener for request events
 
-server.on("request",(req)=>{
-    console.log(`Recieved request for ${req.url}` );
-    if(req.url ==="/error"){
-        server.emit("error",new Error("An error occured!"));
+// server.on("request",(req)=>{
+//     console.log(`Recieved request for ${req.url}` );
+//     if(req.url ==="/error"){
+//         server.emit("error",new Error("An error occured!"));
+//     }
+//     else{
+//         console.log(`Processing request for ${req.url}`);
+//     }
+// });
+
+// server.on("error",(err)=>{
+//     console.log(`Error : ${err.message}`);
+// });
+
+// server.emit("request", { url: "/home" });
+// server.emit("request", { url: "/about" });
+// server.emit("request", { url: "/error" });
+
+
+const http=require("http");
+const fs=require("fs");
+const path=require("path");
+
+const server =http.createServer((req,res)=>{
+    let filePath='';
+    let contentType='text/html';
+    switch(req.url)
+    {
+        case '/':
+            filePath=path.join(__dirname,"views","index.html");
+            break;
+        case '/contact':
+            filePath=path.join(__dirname,"views","contact.html");
+            break;
+        default:
+            filePath=path.join(__dirname,"views","404.html");
+            break;
+
     }
-    else{
-        console.log(`Processing request for ${req.url}`);
-    }
+
+    fs.readFile(filePath,"utf8",(err,data)=>{
+        if(err){
+            res.writeHead(500,{"Content-Type":contentType});
+        }
+        else{
+            res.writeHead(200,{"Content-Type":contentType});
+            res.end(data);
+        }
+    });
+    
 });
 
-server.on("error",(err)=>{
-    console.log(`Error : ${err.message}`);
+server.listen(3000,()=>{
+    console.log("listening to http://localhost"+server.address().port);
 });
-
-server.emit("request", { url: "/home" });
-server.emit("request", { url: "/about" });
-server.emit("request", { url: "/error" });
