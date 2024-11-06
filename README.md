@@ -47,6 +47,18 @@ db.mycollect.updateOne({name:"khadeeja"},{$pull:{hobbies:"talking"}}) - remove o
 <h1>Node</h1><br>
 node -v<br>
 npm -v <br>
+npm i nodemon<br>
+npm run dev<br>
+npm uninstall nodemon<br>
+npm install nodemon -g<br>
+
+<h1>Express</h1><br>
+npm init -y<br>
+npm install express express-session body-parser<br>
+
+
+
+ 
 
 
 
