@@ -1,5 +1,5 @@
 # MERN-STACK
-Mongulardb,Express,react,Node js
+Mongodb,Express,react,Node js
 <h1>React</h1><br> 
 rfce<br>
 State - store data/info about a component<br>
